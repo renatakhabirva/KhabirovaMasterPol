@@ -1,0 +1,1406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище KhabirovaMasterPolModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Access">
+          <Key>
+            <PropertyRef Name="AccessID" />
+          </Key>
+          <Property Name="AccessID" Type="int" Nullable="false" />
+          <Property Name="AccesEmployee" Type="int" Nullable="false" />
+          <Property Name="AccessWorkSpace" Type="int" Nullable="false" />
+          <Property Name="AccessDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CostHistory">
+          <Key>
+            <PropertyRef Name="CostHistoryID" />
+          </Key>
+          <Property Name="CostHistoryID" Type="int" Nullable="false" />
+          <Property Name="CostHistoryProduct" Type="int" Nullable="false" />
+          <Property Name="CostHistory" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="CostHistoryDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EmployeePathronymic" Type="nvarchar" MaxLength="20" />
+          <Property Name="EmployeeBirthDate" Type="date" Nullable="false" />
+          <Property Name="EmployeePassportSeries" Type="int" Nullable="false" />
+          <Property Name="EmployeePassportNumber" Type="int" Nullable="false" />
+          <Property Name="EmployeeBankData" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeFamily" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="EmployeeHealth" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmployeeJobTitle" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobTitle">
+          <Key>
+            <PropertyRef Name="JobTitlleID" />
+          </Key>
+          <Property Name="JobTitlleID" Type="int" Nullable="false" />
+          <Property Name="JobTitle" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="MaterialID" Type="int" Nullable="false" />
+          <Property Name="MaterialType" Type="int" Nullable="false" />
+          <Property Name="MaterialName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaterialCountOfPackage" Type="int" Nullable="false" />
+          <Property Name="MaterialUnit" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaterialDescription" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaterialImage" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MaterialSupply">
+          <Key>
+            <PropertyRef Name="MaterialSupplyID" />
+          </Key>
+          <Property Name="MaterialSupplyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialSupply" Type="int" Nullable="false" />
+          <Property Name="MaterialSupplyDate" Type="date" Nullable="false" />
+          <Property Name="MaterialSupplyProvider" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Materialtype">
+          <Key>
+            <PropertyRef Name="MaterialTypeID" />
+          </Key>
+          <Property Name="MaterialTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaterialTypeName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MaterialTypeProcent" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partners">
+          <Key>
+            <PropertyRef Name="PartnersID" />
+          </Key>
+          <Property Name="PartnersID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PartnersTypeID" Type="int" Nullable="false" />
+          <Property Name="PartnersName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PartnersDirectorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PartnersEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PartnersPhone" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PartnersAdress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PartnersINN" Type="nvarchar" MaxLength="14" Nullable="false" />
+          <Property Name="PartnersRaiting" Type="int" Nullable="false" />
+          <Property Name="PartnersLogo" Type="nvarchar" MaxLength="50" />
+          <Property Name="PartnersPointOfSale" Type="int" />
+        </EntityType>
+        <EntityType Name="PartnersType">
+          <Key>
+            <PropertyRef Name="PartnersTypeID" />
+          </Key>
+          <Property Name="PartnersTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PartnersTypeName" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PointSale">
+          <Key>
+            <PropertyRef Name="PointSaleID" />
+          </Key>
+          <Property Name="PointSaleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PointSaleCity" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PointSaleStreet" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PointSaleHouse" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="PointSaleFloor" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PointSaleIntermediate">
+          <Key>
+            <PropertyRef Name="PointSaleID" />
+            <PropertyRef Name="Partners" />
+          </Key>
+          <Property Name="PointSaleID" Type="int" Nullable="false" />
+          <Property Name="Partners" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductType" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProductArticle" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProductDescription" Type="nvarchar(max)" />
+          <Property Name="ProductImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductLenghtPackageCM" Type="int" />
+          <Property Name="ProductWidthPackageCM" Type="int" />
+          <Property Name="ProductHeightPackageCM" Type="int" />
+          <Property Name="ProductNetWeight" Type="int" />
+          <Property Name="ProductGrossWeight" Type="int" />
+          <Property Name="ProductCertificate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductStandardNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="ProductTime" Type="datetime" />
+          <Property Name="ProductCostPrice" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="ProductWorkspaceNumber" Type="int" />
+          <Property Name="ProductNumberOfPeople" Type="int" />
+          <Property Name="ProductMaterial" Type="int" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeID" />
+          </Key>
+          <Property Name="ProductTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductCoificient" Type="numeric" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="Provider">
+          <Key>
+            <PropertyRef Name="ProviderID" />
+          </Key>
+          <Property Name="ProviderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProviderType" Type="int" Nullable="false" />
+          <Property Name="ProviderName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProviderAdress" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ProviderINN" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="ProviderDirectorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProviderPhone" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ProviderEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProviderLogo" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProviderRaiting" Type="numeric" Precision="1" Scale="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestID" />
+            <PropertyRef Name="RequestProduct" />
+          </Key>
+          <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RequestProduct" Type="int" Nullable="false" />
+          <Property Name="RequestPartners" Type="int" Nullable="false" />
+          <Property Name="RequestQuantity" Type="int" Nullable="false" />
+          <Property Name="RequestDateCompletion" Type="date" Nullable="false" />
+          <Property Name="RequestProductCostInUnit" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="RequestPrepayment" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="RequestObtaining" Type="nvarchar" MaxLength="15" />
+          <Property Name="RequestEmployee" Type="int" />
+        </EntityType>
+        <EntityType Name="StockMaterial">
+          <Key>
+            <PropertyRef Name="StockMaterialID" />
+          </Key>
+          <Property Name="StockMaterialID" Type="int" Nullable="false" />
+          <Property Name="StockMaterialAdmissionOrOutlet" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="StockMaterialQuantity" Type="int" Nullable="false" />
+          <Property Name="StockMaterial" Type="int" Nullable="false" />
+          <Property Name="StockMaterialProvider" Type="int" Nullable="false" />
+          <Property Name="StockMaterialDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="stockProduct">
+          <Key>
+            <PropertyRef Name="StockProductID" />
+          </Key>
+          <Property Name="StockProductID" Type="int" Nullable="false" />
+          <Property Name="StockProductAdmissionOrOutlet" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="StockProductQuantity" Type="int" Nullable="false" />
+          <Property Name="StockProduct" Type="int" Nullable="false" />
+          <Property Name="StockProductDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsedMaterial">
+          <Key>
+            <PropertyRef Name="Material" />
+            <PropertyRef Name="Product" />
+          </Key>
+          <Property Name="Material" Type="int" Nullable="false" />
+          <Property Name="Product" Type="int" Nullable="false" />
+          <Property Name="MaterialCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkSpace">
+          <Key>
+            <PropertyRef Name="WorkSpaceID" />
+          </Key>
+          <Property Name="WorkSpaceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorkSpaceNumber" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Access_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Access" Type="Self.Access" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Access">
+              <PropertyRef Name="AccesEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Access_WorkSpace">
+          <End Role="WorkSpace" Type="Self.WorkSpace" Multiplicity="1" />
+          <End Role="Access" Type="Self.Access" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkSpace">
+              <PropertyRef Name="WorkSpaceID" />
+            </Principal>
+            <Dependent Role="Access">
+              <PropertyRef Name="AccessWorkSpace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostHistory_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="CostHistory" Type="Self.CostHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="CostHistory">
+              <PropertyRef Name="CostHistoryProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Personal">
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTitle">
+              <PropertyRef Name="JobTitlleID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="EmployeeJobTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_Materialtype">
+          <End Role="Materialtype" Type="Self.Materialtype" Multiplicity="1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materialtype">
+              <PropertyRef Name="MaterialTypeID" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="MaterialType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialSupply_Material">
+          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="MaterialSupply" Type="Self.MaterialSupply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="MaterialSupply">
+              <PropertyRef Name="MaterialSupply" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialSupply_Provider">
+          <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
+          <End Role="MaterialSupply" Type="Self.MaterialSupply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ProviderID" />
+            </Principal>
+            <Dependent Role="MaterialSupply">
+              <PropertyRef Name="MaterialSupplyProvider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partners_PartnersType">
+          <End Role="PartnersType" Type="Self.PartnersType" Multiplicity="1" />
+          <End Role="Partners" Type="Self.Partners" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartnersType">
+              <PropertyRef Name="PartnersTypeID" />
+            </Principal>
+            <Dependent Role="Partners">
+              <PropertyRef Name="PartnersTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PointSaleIntermediate_Partners">
+          <End Role="Partners" Type="Self.Partners" Multiplicity="1" />
+          <End Role="PointSaleIntermediate" Type="Self.PointSaleIntermediate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partners">
+              <PropertyRef Name="PartnersID" />
+            </Principal>
+            <Dependent Role="PointSaleIntermediate">
+              <PropertyRef Name="Partners" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PointSaleIntermediate_PointSale">
+          <End Role="PointSale" Type="Self.PointSale" Multiplicity="1" />
+          <End Role="PointSaleIntermediate" Type="Self.PointSaleIntermediate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PointSale">
+              <PropertyRef Name="PointSaleID" />
+            </Principal>
+            <Dependent Role="PointSaleIntermediate">
+              <PropertyRef Name="PointSaleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductType">
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductType">
+              <PropertyRef Name="ProductTypeID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_WorkSpace">
+          <End Role="WorkSpace" Type="Self.WorkSpace" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkSpace">
+              <PropertyRef Name="WorkSpaceID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductWorkspaceNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provider_PartnersType">
+          <End Role="PartnersType" Type="Self.PartnersType" Multiplicity="1" />
+          <End Role="Provider" Type="Self.Provider" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartnersType">
+              <PropertyRef Name="PartnersTypeID" />
+            </Principal>
+            <Dependent Role="Provider">
+              <PropertyRef Name="ProviderType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="RequestEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Partners">
+          <End Role="Partners" Type="Self.Partners" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partners">
+              <PropertyRef Name="PartnersID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="RequestPartners" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="RequestProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StockMaterial_Material">
+          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="StockMaterial" Type="Self.StockMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="StockMaterial">
+              <PropertyRef Name="StockMaterial" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StockMaterial_Provider">
+          <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
+          <End Role="StockMaterial" Type="Self.StockMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ProviderID" />
+            </Principal>
+            <Dependent Role="StockMaterial">
+              <PropertyRef Name="StockMaterialProvider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stockProduct_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="stockProduct" Type="Self.stockProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="stockProduct">
+              <PropertyRef Name="StockProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsedMaterial_Material">
+          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="UsedMaterial" Type="Self.UsedMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="UsedMaterial">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsedMaterial_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="UsedMaterial" Type="Self.UsedMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="UsedMaterial">
+              <PropertyRef Name="Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище KhabirovaMasterPolModelContainer">
+          <EntitySet Name="Access" EntityType="Self.Access" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CostHistory" EntityType="Self.CostHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobTitle" EntityType="Self.JobTitle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Material" EntityType="Self.Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialSupply" EntityType="Self.MaterialSupply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Materialtype" EntityType="Self.Materialtype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partners" EntityType="Self.Partners" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PartnersType" EntityType="Self.PartnersType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointSale" EntityType="Self.PointSale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointSaleIntermediate" EntityType="Self.PointSaleIntermediate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StockMaterial" EntityType="Self.StockMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="stockProduct" EntityType="Self.stockProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsedMaterial" EntityType="Self.UsedMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WorkSpace" EntityType="Self.WorkSpace" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Access_Employees" Association="Self.FK_Access_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Access" EntitySet="Access" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Access_WorkSpace" Association="Self.FK_Access_WorkSpace">
+            <End Role="WorkSpace" EntitySet="WorkSpace" />
+            <End Role="Access" EntitySet="Access" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostHistory_Product" Association="Self.FK_CostHistory_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="CostHistory" EntitySet="CostHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Personal" Association="Self.FK_Employees_Personal">
+            <End Role="JobTitle" EntitySet="JobTitle" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_Materialtype" Association="Self.FK_Material_Materialtype">
+            <End Role="Materialtype" EntitySet="Materialtype" />
+            <End Role="Material" EntitySet="Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialSupply_Material" Association="Self.FK_MaterialSupply_Material">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="MaterialSupply" EntitySet="MaterialSupply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialSupply_Provider" Association="Self.FK_MaterialSupply_Provider">
+            <End Role="Provider" EntitySet="Provider" />
+            <End Role="MaterialSupply" EntitySet="MaterialSupply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partners_PartnersType" Association="Self.FK_Partners_PartnersType">
+            <End Role="PartnersType" EntitySet="PartnersType" />
+            <End Role="Partners" EntitySet="Partners" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PointSaleIntermediate_Partners" Association="Self.FK_PointSaleIntermediate_Partners">
+            <End Role="Partners" EntitySet="Partners" />
+            <End Role="PointSaleIntermediate" EntitySet="PointSaleIntermediate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PointSaleIntermediate_PointSale" Association="Self.FK_PointSaleIntermediate_PointSale">
+            <End Role="PointSale" EntitySet="PointSale" />
+            <End Role="PointSaleIntermediate" EntitySet="PointSaleIntermediate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
+            <End Role="ProductType" EntitySet="ProductType" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_WorkSpace" Association="Self.FK_Product_WorkSpace">
+            <End Role="WorkSpace" EntitySet="WorkSpace" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provider_PartnersType" Association="Self.FK_Provider_PartnersType">
+            <End Role="PartnersType" EntitySet="PartnersType" />
+            <End Role="Provider" EntitySet="Provider" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Employees" Association="Self.FK_Request_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Partners" Association="Self.FK_Request_Partners">
+            <End Role="Partners" EntitySet="Partners" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Product" Association="Self.FK_Request_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StockMaterial_Material" Association="Self.FK_StockMaterial_Material">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="StockMaterial" EntitySet="StockMaterial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StockMaterial_Provider" Association="Self.FK_StockMaterial_Provider">
+            <End Role="Provider" EntitySet="Provider" />
+            <End Role="StockMaterial" EntitySet="StockMaterial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stockProduct_Product" Association="Self.FK_stockProduct_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="stockProduct" EntitySet="stockProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsedMaterial_Material" Association="Self.FK_UsedMaterial_Material">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="UsedMaterial" EntitySet="UsedMaterial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsedMaterial_Product" Association="Self.FK_UsedMaterial_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="UsedMaterial" EntitySet="UsedMaterial" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KhabirovaMasterPolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Access">
+          <Key>
+            <PropertyRef Name="AccessID" />
+          </Key>
+          <Property Name="AccessID" Type="Int32" Nullable="false" />
+          <Property Name="AccesEmployee" Type="Int32" Nullable="false" />
+          <Property Name="AccessWorkSpace" Type="Int32" Nullable="false" />
+          <Property Name="AccessDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Access_Employees" FromRole="Access" ToRole="Employees" />
+          <NavigationProperty Name="WorkSpace" Relationship="Self.FK_Access_WorkSpace" FromRole="Access" ToRole="WorkSpace" />
+        </EntityType>
+        <EntityType Name="CostHistory">
+          <Key>
+            <PropertyRef Name="CostHistoryID" />
+          </Key>
+          <Property Name="CostHistoryID" Type="Int32" Nullable="false" />
+          <Property Name="CostHistoryProduct" Type="Int32" Nullable="false" />
+          <Property Name="CostHistory1" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="CostHistoryDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_CostHistory_Product" FromRole="CostHistory" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeSurname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeePathronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeBirthDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EmployeePassportSeries" Type="Int32" Nullable="false" />
+          <Property Name="EmployeePassportNumber" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeBankData" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeFamily" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeHealth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeJobTitle" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Access" Relationship="Self.FK_Access_Employees" FromRole="Employees" ToRole="Access" />
+          <NavigationProperty Name="JobTitle" Relationship="Self.FK_Employees_Personal" FromRole="Employees" ToRole="JobTitle" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Request_Employees" FromRole="Employees" ToRole="Request" />
+        </EntityType>
+        <EntityType Name="JobTitle">
+          <Key>
+            <PropertyRef Name="JobTitlleID" />
+          </Key>
+          <Property Name="JobTitlleID" Type="Int32" Nullable="false" />
+          <Property Name="JobTitle1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Personal" FromRole="JobTitle" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Material">
+          <Key>
+            <PropertyRef Name="MaterialID" />
+          </Key>
+          <Property Name="MaterialID" Type="Int32" Nullable="false" />
+          <Property Name="MaterialType" Type="Int32" Nullable="false" />
+          <Property Name="MaterialName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaterialCountOfPackage" Type="Int32" Nullable="false" />
+          <Property Name="MaterialUnit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MaterialDescription" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MaterialImage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Materialtype1" Relationship="Self.FK_Material_Materialtype" FromRole="Material" ToRole="Materialtype" />
+          <NavigationProperty Name="MaterialSupply" Relationship="Self.FK_MaterialSupply_Material" FromRole="Material" ToRole="MaterialSupply" />
+          <NavigationProperty Name="StockMaterial" Relationship="Self.FK_StockMaterial_Material" FromRole="Material" ToRole="StockMaterial" />
+          <NavigationProperty Name="UsedMaterial" Relationship="Self.FK_UsedMaterial_Material" FromRole="Material" ToRole="UsedMaterial" />
+        </EntityType>
+        <EntityType Name="MaterialSupply">
+          <Key>
+            <PropertyRef Name="MaterialSupplyID" />
+          </Key>
+          <Property Name="MaterialSupplyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialSupply1" Type="Int32" Nullable="false" />
+          <Property Name="MaterialSupplyDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MaterialSupplyProvider" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Material" Relationship="Self.FK_MaterialSupply_Material" FromRole="MaterialSupply" ToRole="Material" />
+          <NavigationProperty Name="Provider" Relationship="Self.FK_MaterialSupply_Provider" FromRole="MaterialSupply" ToRole="Provider" />
+        </EntityType>
+        <EntityType Name="Materialtype">
+          <Key>
+            <PropertyRef Name="MaterialTypeID" />
+          </Key>
+          <Property Name="MaterialTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaterialTypeName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaterialTypeProcent" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Material" Relationship="Self.FK_Material_Materialtype" FromRole="Materialtype" ToRole="Material" />
+        </EntityType>
+        <EntityType Name="Partners">
+          <Key>
+            <PropertyRef Name="PartnersID" />
+          </Key>
+          <Property Name="PartnersID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartnersTypeID" Type="Int32" Nullable="false" />
+          <Property Name="PartnersName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PartnersDirectorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PartnersEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PartnersPhone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PartnersAdress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PartnersINN" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PartnersRaiting" Type="Int32" Nullable="false" />
+          <Property Name="PartnersLogo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PartnersPointOfSale" Type="Int32" />
+          <NavigationProperty Name="PartnersType" Relationship="Self.FK_Partners_PartnersType" FromRole="Partners" ToRole="PartnersType" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Request_Partners" FromRole="Partners" ToRole="Request" />
+          <NavigationProperty Name="PointSale" Relationship="Self.PointSaleIntermediate" FromRole="Partners" ToRole="PointSale" />
+        </EntityType>
+        <EntityType Name="PartnersType">
+          <Key>
+            <PropertyRef Name="PartnersTypeID" />
+          </Key>
+          <Property Name="PartnersTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartnersTypeName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Partners" Relationship="Self.FK_Partners_PartnersType" FromRole="PartnersType" ToRole="Partners" />
+          <NavigationProperty Name="Provider" Relationship="Self.FK_Provider_PartnersType" FromRole="PartnersType" ToRole="Provider" />
+        </EntityType>
+        <EntityType Name="PointSale">
+          <Key>
+            <PropertyRef Name="PointSaleID" />
+          </Key>
+          <Property Name="PointSaleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PointSaleCity" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PointSaleStreet" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PointSaleHouse" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PointSaleFloor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Partners" Relationship="Self.PointSaleIntermediate" FromRole="PointSale" ToRole="Partners" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductType" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductArticle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductLenghtPackageCM" Type="Int32" />
+          <Property Name="ProductWidthPackageCM" Type="Int32" />
+          <Property Name="ProductHeightPackageCM" Type="Int32" />
+          <Property Name="ProductNetWeight" Type="Int32" />
+          <Property Name="ProductGrossWeight" Type="Int32" />
+          <Property Name="ProductCertificate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductStandardNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ProductTime" Type="DateTime" Precision="3" />
+          <Property Name="ProductCostPrice" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="ProductWorkspaceNumber" Type="Int32" />
+          <Property Name="ProductNumberOfPeople" Type="Int32" />
+          <Property Name="ProductMaterial" Type="Int32" />
+          <NavigationProperty Name="CostHistory" Relationship="Self.FK_CostHistory_Product" FromRole="Product" ToRole="CostHistory" />
+          <NavigationProperty Name="ProductType1" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
+          <NavigationProperty Name="WorkSpace" Relationship="Self.FK_Product_WorkSpace" FromRole="Product" ToRole="WorkSpace" />
+          <NavigationProperty Name="Request" Relationship="Self.FK_Request_Product" FromRole="Product" ToRole="Request" />
+          <NavigationProperty Name="stockProduct" Relationship="Self.FK_stockProduct_Product" FromRole="Product" ToRole="stockProduct" />
+          <NavigationProperty Name="UsedMaterial" Relationship="Self.FK_UsedMaterial_Product" FromRole="Product" ToRole="UsedMaterial" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeID" />
+          </Key>
+          <Property Name="ProductTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductCoificient" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_ProductType" FromRole="ProductType" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Provider">
+          <Key>
+            <PropertyRef Name="ProviderID" />
+          </Key>
+          <Property Name="ProviderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProviderType" Type="Int32" Nullable="false" />
+          <Property Name="ProviderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderAdress" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ProviderINN" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderDirectorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderPhone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderLogo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderRaiting" Type="Decimal" Precision="1" Scale="1" Nullable="false" />
+          <NavigationProperty Name="MaterialSupply" Relationship="Self.FK_MaterialSupply_Provider" FromRole="Provider" ToRole="MaterialSupply" />
+          <NavigationProperty Name="PartnersType" Relationship="Self.FK_Provider_PartnersType" FromRole="Provider" ToRole="PartnersType" />
+          <NavigationProperty Name="StockMaterial" Relationship="Self.FK_StockMaterial_Provider" FromRole="Provider" ToRole="StockMaterial" />
+        </EntityType>
+        <EntityType Name="Request">
+          <Key>
+            <PropertyRef Name="RequestID" />
+            <PropertyRef Name="RequestProduct" />
+          </Key>
+          <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RequestProduct" Type="Int32" Nullable="false" />
+          <Property Name="RequestPartners" Type="Int32" Nullable="false" />
+          <Property Name="RequestQuantity" Type="Int32" Nullable="false" />
+          <Property Name="RequestDateCompletion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RequestProductCostInUnit" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="RequestPrepayment" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="RequestObtaining" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="RequestEmployee" Type="Int32" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Request_Employees" FromRole="Request" ToRole="Employees" />
+          <NavigationProperty Name="Partners" Relationship="Self.FK_Request_Partners" FromRole="Request" ToRole="Partners" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Request_Product" FromRole="Request" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="StockMaterial">
+          <Key>
+            <PropertyRef Name="StockMaterialID" />
+          </Key>
+          <Property Name="StockMaterialID" Type="Int32" Nullable="false" />
+          <Property Name="StockMaterialAdmissionOrOutlet" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StockMaterialQuantity" Type="Int32" Nullable="false" />
+          <Property Name="StockMaterial1" Type="Int32" Nullable="false" />
+          <Property Name="StockMaterialProvider" Type="Int32" Nullable="false" />
+          <Property Name="StockMaterialDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Material" Relationship="Self.FK_StockMaterial_Material" FromRole="StockMaterial" ToRole="Material" />
+          <NavigationProperty Name="Provider" Relationship="Self.FK_StockMaterial_Provider" FromRole="StockMaterial" ToRole="Provider" />
+        </EntityType>
+        <EntityType Name="stockProduct">
+          <Key>
+            <PropertyRef Name="StockProductID" />
+          </Key>
+          <Property Name="StockProductID" Type="Int32" Nullable="false" />
+          <Property Name="StockProductAdmissionOrOutlet" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StockProductQuantity" Type="Int32" Nullable="false" />
+          <Property Name="StockProduct1" Type="Int32" Nullable="false" />
+          <Property Name="StockProductDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_stockProduct_Product" FromRole="stockProduct" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="UsedMaterial">
+          <Key>
+            <PropertyRef Name="Material" />
+            <PropertyRef Name="Product" />
+          </Key>
+          <Property Name="Material" Type="Int32" Nullable="false" />
+          <Property Name="Product" Type="Int32" Nullable="false" />
+          <Property Name="MaterialCount" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Material1" Relationship="Self.FK_UsedMaterial_Material" FromRole="UsedMaterial" ToRole="Material" />
+          <NavigationProperty Name="Product1" Relationship="Self.FK_UsedMaterial_Product" FromRole="UsedMaterial" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="WorkSpace">
+          <Key>
+            <PropertyRef Name="WorkSpaceID" />
+          </Key>
+          <Property Name="WorkSpaceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkSpaceNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Access" Relationship="Self.FK_Access_WorkSpace" FromRole="WorkSpace" ToRole="Access" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Product_WorkSpace" FromRole="WorkSpace" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_Access_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Access" Type="Self.Access" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Access">
+              <PropertyRef Name="AccesEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Access_WorkSpace">
+          <End Role="WorkSpace" Type="Self.WorkSpace" Multiplicity="1" />
+          <End Role="Access" Type="Self.Access" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkSpace">
+              <PropertyRef Name="WorkSpaceID" />
+            </Principal>
+            <Dependent Role="Access">
+              <PropertyRef Name="AccessWorkSpace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostHistory_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="CostHistory" Type="Self.CostHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="CostHistory">
+              <PropertyRef Name="CostHistoryProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Personal">
+          <End Role="JobTitle" Type="Self.JobTitle" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobTitle">
+              <PropertyRef Name="JobTitlleID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="EmployeeJobTitle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="RequestEmployee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_Materialtype">
+          <End Role="Materialtype" Type="Self.Materialtype" Multiplicity="1" />
+          <End Role="Material" Type="Self.Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Materialtype">
+              <PropertyRef Name="MaterialTypeID" />
+            </Principal>
+            <Dependent Role="Material">
+              <PropertyRef Name="MaterialType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialSupply_Material">
+          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="MaterialSupply" Type="Self.MaterialSupply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="MaterialSupply">
+              <PropertyRef Name="MaterialSupply1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StockMaterial_Material">
+          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="StockMaterial" Type="Self.StockMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="StockMaterial">
+              <PropertyRef Name="StockMaterial1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsedMaterial_Material">
+          <End Role="Material" Type="Self.Material" Multiplicity="1" />
+          <End Role="UsedMaterial" Type="Self.UsedMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Material">
+              <PropertyRef Name="MaterialID" />
+            </Principal>
+            <Dependent Role="UsedMaterial">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaterialSupply_Provider">
+          <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
+          <End Role="MaterialSupply" Type="Self.MaterialSupply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ProviderID" />
+            </Principal>
+            <Dependent Role="MaterialSupply">
+              <PropertyRef Name="MaterialSupplyProvider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partners_PartnersType">
+          <End Role="PartnersType" Type="Self.PartnersType" Multiplicity="1" />
+          <End Role="Partners" Type="Self.Partners" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartnersType">
+              <PropertyRef Name="PartnersTypeID" />
+            </Principal>
+            <Dependent Role="Partners">
+              <PropertyRef Name="PartnersTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Partners">
+          <End Role="Partners" Type="Self.Partners" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partners">
+              <PropertyRef Name="PartnersID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="RequestPartners" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provider_PartnersType">
+          <End Role="PartnersType" Type="Self.PartnersType" Multiplicity="1" />
+          <End Role="Provider" Type="Self.Provider" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartnersType">
+              <PropertyRef Name="PartnersTypeID" />
+            </Principal>
+            <Dependent Role="Provider">
+              <PropertyRef Name="ProviderType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductType">
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductType">
+              <PropertyRef Name="ProductTypeID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_WorkSpace">
+          <End Role="WorkSpace" Type="Self.WorkSpace" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkSpace">
+              <PropertyRef Name="WorkSpaceID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductWorkspaceNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Request_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Request" Type="Self.Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Request">
+              <PropertyRef Name="RequestProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stockProduct_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="stockProduct" Type="Self.stockProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="stockProduct">
+              <PropertyRef Name="StockProduct1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsedMaterial_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="UsedMaterial" Type="Self.UsedMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="UsedMaterial">
+              <PropertyRef Name="Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StockMaterial_Provider">
+          <End Role="Provider" Type="Self.Provider" Multiplicity="1" />
+          <End Role="StockMaterial" Type="Self.StockMaterial" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider">
+              <PropertyRef Name="ProviderID" />
+            </Principal>
+            <Dependent Role="StockMaterial">
+              <PropertyRef Name="StockMaterialProvider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PointSaleIntermediate">
+          <End Role="Partners" Type="Self.Partners" Multiplicity="*" />
+          <End Role="PointSale" Type="Self.PointSale" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="KhabirovaMasterPolEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Access" EntityType="Self.Access" />
+          <EntitySet Name="CostHistory" EntityType="Self.CostHistory" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" />
+          <EntitySet Name="JobTitle" EntityType="Self.JobTitle" />
+          <EntitySet Name="Material" EntityType="Self.Material" />
+          <EntitySet Name="MaterialSupply" EntityType="Self.MaterialSupply" />
+          <EntitySet Name="Materialtype" EntityType="Self.Materialtype" />
+          <EntitySet Name="Partners" EntityType="Self.Partners" />
+          <EntitySet Name="PartnersType" EntityType="Self.PartnersType" />
+          <EntitySet Name="PointSale" EntityType="Self.PointSale" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="ProductType" EntityType="Self.ProductType" />
+          <EntitySet Name="Provider" EntityType="Self.Provider" />
+          <EntitySet Name="Request" EntityType="Self.Request" />
+          <EntitySet Name="StockMaterial" EntityType="Self.StockMaterial" />
+          <EntitySet Name="stockProduct" EntityType="Self.stockProduct" />
+          <EntitySet Name="UsedMaterial" EntityType="Self.UsedMaterial" />
+          <EntitySet Name="WorkSpace" EntityType="Self.WorkSpace" />
+          <AssociationSet Name="FK_Access_Employees" Association="Self.FK_Access_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Access" EntitySet="Access" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Access_WorkSpace" Association="Self.FK_Access_WorkSpace">
+            <End Role="WorkSpace" EntitySet="WorkSpace" />
+            <End Role="Access" EntitySet="Access" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostHistory_Product" Association="Self.FK_CostHistory_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="CostHistory" EntitySet="CostHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Personal" Association="Self.FK_Employees_Personal">
+            <End Role="JobTitle" EntitySet="JobTitle" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Employees" Association="Self.FK_Request_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_Materialtype" Association="Self.FK_Material_Materialtype">
+            <End Role="Materialtype" EntitySet="Materialtype" />
+            <End Role="Material" EntitySet="Material" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialSupply_Material" Association="Self.FK_MaterialSupply_Material">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="MaterialSupply" EntitySet="MaterialSupply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StockMaterial_Material" Association="Self.FK_StockMaterial_Material">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="StockMaterial" EntitySet="StockMaterial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsedMaterial_Material" Association="Self.FK_UsedMaterial_Material">
+            <End Role="Material" EntitySet="Material" />
+            <End Role="UsedMaterial" EntitySet="UsedMaterial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaterialSupply_Provider" Association="Self.FK_MaterialSupply_Provider">
+            <End Role="Provider" EntitySet="Provider" />
+            <End Role="MaterialSupply" EntitySet="MaterialSupply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partners_PartnersType" Association="Self.FK_Partners_PartnersType">
+            <End Role="PartnersType" EntitySet="PartnersType" />
+            <End Role="Partners" EntitySet="Partners" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Partners" Association="Self.FK_Request_Partners">
+            <End Role="Partners" EntitySet="Partners" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provider_PartnersType" Association="Self.FK_Provider_PartnersType">
+            <End Role="PartnersType" EntitySet="PartnersType" />
+            <End Role="Provider" EntitySet="Provider" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
+            <End Role="ProductType" EntitySet="ProductType" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_WorkSpace" Association="Self.FK_Product_WorkSpace">
+            <End Role="WorkSpace" EntitySet="WorkSpace" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Request_Product" Association="Self.FK_Request_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Request" EntitySet="Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stockProduct_Product" Association="Self.FK_stockProduct_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="stockProduct" EntitySet="stockProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsedMaterial_Product" Association="Self.FK_UsedMaterial_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="UsedMaterial" EntitySet="UsedMaterial" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StockMaterial_Provider" Association="Self.FK_StockMaterial_Provider">
+            <End Role="Provider" EntitySet="Provider" />
+            <End Role="StockMaterial" EntitySet="StockMaterial" />
+          </AssociationSet>
+          <AssociationSet Name="PointSaleIntermediate" Association="Self.PointSaleIntermediate">
+            <End Role="Partners" EntitySet="Partners" />
+            <End Role="PointSale" EntitySet="PointSale" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище KhabirovaMasterPolModelContainer" CdmEntityContainer="KhabirovaMasterPolEntities">
+          <EntitySetMapping Name="Access">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.Access">
+              <MappingFragment StoreEntitySet="Access">
+                <ScalarProperty Name="AccessID" ColumnName="AccessID" />
+                <ScalarProperty Name="AccesEmployee" ColumnName="AccesEmployee" />
+                <ScalarProperty Name="AccessWorkSpace" ColumnName="AccessWorkSpace" />
+                <ScalarProperty Name="AccessDateTime" ColumnName="AccessDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostHistory">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.CostHistory">
+              <MappingFragment StoreEntitySet="CostHistory">
+                <ScalarProperty Name="CostHistoryID" ColumnName="CostHistoryID" />
+                <ScalarProperty Name="CostHistoryProduct" ColumnName="CostHistoryProduct" />
+                <ScalarProperty Name="CostHistory1" ColumnName="CostHistory" />
+                <ScalarProperty Name="CostHistoryDate" ColumnName="CostHistoryDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeSurname" ColumnName="EmployeeSurname" />
+                <ScalarProperty Name="EmployeePathronymic" ColumnName="EmployeePathronymic" />
+                <ScalarProperty Name="EmployeeBirthDate" ColumnName="EmployeeBirthDate" />
+                <ScalarProperty Name="EmployeePassportSeries" ColumnName="EmployeePassportSeries" />
+                <ScalarProperty Name="EmployeePassportNumber" ColumnName="EmployeePassportNumber" />
+                <ScalarProperty Name="EmployeeBankData" ColumnName="EmployeeBankData" />
+                <ScalarProperty Name="EmployeeFamily" ColumnName="EmployeeFamily" />
+                <ScalarProperty Name="EmployeeHealth" ColumnName="EmployeeHealth" />
+                <ScalarProperty Name="EmployeeJobTitle" ColumnName="EmployeeJobTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobTitle">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.JobTitle">
+              <MappingFragment StoreEntitySet="JobTitle">
+                <ScalarProperty Name="JobTitlleID" ColumnName="JobTitlleID" />
+                <ScalarProperty Name="JobTitle1" ColumnName="JobTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Material">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.Material">
+              <MappingFragment StoreEntitySet="Material">
+                <ScalarProperty Name="MaterialID" ColumnName="MaterialID" />
+                <ScalarProperty Name="MaterialType" ColumnName="MaterialType" />
+                <ScalarProperty Name="MaterialName" ColumnName="MaterialName" />
+                <ScalarProperty Name="MaterialCountOfPackage" ColumnName="MaterialCountOfPackage" />
+                <ScalarProperty Name="MaterialUnit" ColumnName="MaterialUnit" />
+                <ScalarProperty Name="MaterialDescription" ColumnName="MaterialDescription" />
+                <ScalarProperty Name="MaterialImage" ColumnName="MaterialImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialSupply">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.MaterialSupply">
+              <MappingFragment StoreEntitySet="MaterialSupply">
+                <ScalarProperty Name="MaterialSupplyID" ColumnName="MaterialSupplyID" />
+                <ScalarProperty Name="MaterialSupply1" ColumnName="MaterialSupply" />
+                <ScalarProperty Name="MaterialSupplyDate" ColumnName="MaterialSupplyDate" />
+                <ScalarProperty Name="MaterialSupplyProvider" ColumnName="MaterialSupplyProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Materialtype">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.Materialtype">
+              <MappingFragment StoreEntitySet="Materialtype">
+                <ScalarProperty Name="MaterialTypeID" ColumnName="MaterialTypeID" />
+                <ScalarProperty Name="MaterialTypeName" ColumnName="MaterialTypeName" />
+                <ScalarProperty Name="MaterialTypeProcent" ColumnName="MaterialTypeProcent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partners">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.Partners">
+              <MappingFragment StoreEntitySet="Partners">
+                <ScalarProperty Name="PartnersID" ColumnName="PartnersID" />
+                <ScalarProperty Name="PartnersTypeID" ColumnName="PartnersTypeID" />
+                <ScalarProperty Name="PartnersName" ColumnName="PartnersName" />
+                <ScalarProperty Name="PartnersDirectorName" ColumnName="PartnersDirectorName" />
+                <ScalarProperty Name="PartnersEmail" ColumnName="PartnersEmail" />
+                <ScalarProperty Name="PartnersPhone" ColumnName="PartnersPhone" />
+                <ScalarProperty Name="PartnersAdress" ColumnName="PartnersAdress" />
+                <ScalarProperty Name="PartnersINN" ColumnName="PartnersINN" />
+                <ScalarProperty Name="PartnersRaiting" ColumnName="PartnersRaiting" />
+                <ScalarProperty Name="PartnersLogo" ColumnName="PartnersLogo" />
+                <ScalarProperty Name="PartnersPointOfSale" ColumnName="PartnersPointOfSale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PartnersType">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.PartnersType">
+              <MappingFragment StoreEntitySet="PartnersType">
+                <ScalarProperty Name="PartnersTypeID" ColumnName="PartnersTypeID" />
+                <ScalarProperty Name="PartnersTypeName" ColumnName="PartnersTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PointSale">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.PointSale">
+              <MappingFragment StoreEntitySet="PointSale">
+                <ScalarProperty Name="PointSaleID" ColumnName="PointSaleID" />
+                <ScalarProperty Name="PointSaleCity" ColumnName="PointSaleCity" />
+                <ScalarProperty Name="PointSaleStreet" ColumnName="PointSaleStreet" />
+                <ScalarProperty Name="PointSaleHouse" ColumnName="PointSaleHouse" />
+                <ScalarProperty Name="PointSaleFloor" ColumnName="PointSaleFloor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductArticle" ColumnName="ProductArticle" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
+                <ScalarProperty Name="ProductLenghtPackageCM" ColumnName="ProductLenghtPackageCM" />
+                <ScalarProperty Name="ProductWidthPackageCM" ColumnName="ProductWidthPackageCM" />
+                <ScalarProperty Name="ProductHeightPackageCM" ColumnName="ProductHeightPackageCM" />
+                <ScalarProperty Name="ProductNetWeight" ColumnName="ProductNetWeight" />
+                <ScalarProperty Name="ProductGrossWeight" ColumnName="ProductGrossWeight" />
+                <ScalarProperty Name="ProductCertificate" ColumnName="ProductCertificate" />
+                <ScalarProperty Name="ProductStandardNumber" ColumnName="ProductStandardNumber" />
+                <ScalarProperty Name="ProductTime" ColumnName="ProductTime" />
+                <ScalarProperty Name="ProductCostPrice" ColumnName="ProductCostPrice" />
+                <ScalarProperty Name="ProductWorkspaceNumber" ColumnName="ProductWorkspaceNumber" />
+                <ScalarProperty Name="ProductNumberOfPeople" ColumnName="ProductNumberOfPeople" />
+                <ScalarProperty Name="ProductMaterial" ColumnName="ProductMaterial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductType">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.ProductType">
+              <MappingFragment StoreEntitySet="ProductType">
+                <ScalarProperty Name="ProductTypeID" ColumnName="ProductTypeID" />
+                <ScalarProperty Name="ProductType1" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductCoificient" ColumnName="ProductCoificient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provider">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.Provider">
+              <MappingFragment StoreEntitySet="Provider">
+                <ScalarProperty Name="ProviderID" ColumnName="ProviderID" />
+                <ScalarProperty Name="ProviderType" ColumnName="ProviderType" />
+                <ScalarProperty Name="ProviderName" ColumnName="ProviderName" />
+                <ScalarProperty Name="ProviderAdress" ColumnName="ProviderAdress" />
+                <ScalarProperty Name="ProviderINN" ColumnName="ProviderINN" />
+                <ScalarProperty Name="ProviderDirectorName" ColumnName="ProviderDirectorName" />
+                <ScalarProperty Name="ProviderPhone" ColumnName="ProviderPhone" />
+                <ScalarProperty Name="ProviderEmail" ColumnName="ProviderEmail" />
+                <ScalarProperty Name="ProviderLogo" ColumnName="ProviderLogo" />
+                <ScalarProperty Name="ProviderRaiting" ColumnName="ProviderRaiting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Request">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.Request">
+              <MappingFragment StoreEntitySet="Request">
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="RequestProduct" ColumnName="RequestProduct" />
+                <ScalarProperty Name="RequestPartners" ColumnName="RequestPartners" />
+                <ScalarProperty Name="RequestQuantity" ColumnName="RequestQuantity" />
+                <ScalarProperty Name="RequestDateCompletion" ColumnName="RequestDateCompletion" />
+                <ScalarProperty Name="RequestProductCostInUnit" ColumnName="RequestProductCostInUnit" />
+                <ScalarProperty Name="RequestPrepayment" ColumnName="RequestPrepayment" />
+                <ScalarProperty Name="RequestObtaining" ColumnName="RequestObtaining" />
+                <ScalarProperty Name="RequestEmployee" ColumnName="RequestEmployee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StockMaterial">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.StockMaterial">
+              <MappingFragment StoreEntitySet="StockMaterial">
+                <ScalarProperty Name="StockMaterialID" ColumnName="StockMaterialID" />
+                <ScalarProperty Name="StockMaterialAdmissionOrOutlet" ColumnName="StockMaterialAdmissionOrOutlet" />
+                <ScalarProperty Name="StockMaterialQuantity" ColumnName="StockMaterialQuantity" />
+                <ScalarProperty Name="StockMaterial1" ColumnName="StockMaterial" />
+                <ScalarProperty Name="StockMaterialProvider" ColumnName="StockMaterialProvider" />
+                <ScalarProperty Name="StockMaterialDate" ColumnName="StockMaterialDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stockProduct">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.stockProduct">
+              <MappingFragment StoreEntitySet="stockProduct">
+                <ScalarProperty Name="StockProductID" ColumnName="StockProductID" />
+                <ScalarProperty Name="StockProductAdmissionOrOutlet" ColumnName="StockProductAdmissionOrOutlet" />
+                <ScalarProperty Name="StockProductQuantity" ColumnName="StockProductQuantity" />
+                <ScalarProperty Name="StockProduct1" ColumnName="StockProduct" />
+                <ScalarProperty Name="StockProductDate" ColumnName="StockProductDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsedMaterial">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.UsedMaterial">
+              <MappingFragment StoreEntitySet="UsedMaterial">
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="MaterialCount" ColumnName="MaterialCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkSpace">
+            <EntityTypeMapping TypeName="KhabirovaMasterPolModel.WorkSpace">
+              <MappingFragment StoreEntitySet="WorkSpace">
+                <ScalarProperty Name="WorkSpaceID" ColumnName="WorkSpaceID" />
+                <ScalarProperty Name="WorkSpaceNumber" ColumnName="WorkSpaceNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="PointSaleIntermediate" TypeName="KhabirovaMasterPolModel.PointSaleIntermediate" StoreEntitySet="PointSaleIntermediate">
+            <EndProperty Name="Partners">
+              <ScalarProperty Name="PartnersID" ColumnName="Partners" />
+            </EndProperty>
+            <EndProperty Name="PointSale">
+              <ScalarProperty Name="PointSaleID" ColumnName="PointSaleID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

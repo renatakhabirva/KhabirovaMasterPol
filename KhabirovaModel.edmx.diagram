@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f35f991b99e54a2aa312406c3d03d153" Name="Diagram1">
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.Access" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.CostHistory" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.Employees" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.JobTitle" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.Material" Width="1.5" PointX="6" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.MaterialSupply" Width="1.5" PointX="11.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.Materialtype" Width="1.5" PointX="3.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.Partners" Width="1.5" PointX="9" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.PartnersType" Width="1.5" PointX="6.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.PointSale" Width="1.5" PointX="11.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.Product" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.ProductType" Width="1.5" PointX="3.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.Provider" Width="1.5" PointX="9" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.Request" Width="1.5" PointX="11.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.StockMaterial" Width="1.5" PointX="14.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.stockProduct" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.UsedMaterial" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KhabirovaMasterPolModel.WorkSpace" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Access_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Access_WorkSpace" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_CostHistory_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Employees_Personal" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Request_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Material_Materialtype" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_MaterialSupply_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_StockMaterial_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_UsedMaterial_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_MaterialSupply_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Partners_PartnersType" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Request_Partners" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Provider_PartnersType" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Product_ProductType" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Product_WorkSpace" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_Request_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_stockProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_UsedMaterial_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.FK_StockMaterial_Provider" ManuallyRouted="false" />
+        <AssociationConnector Association="KhabirovaMasterPolModel.PointSaleIntermediate" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
