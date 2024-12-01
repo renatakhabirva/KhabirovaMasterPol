@@ -11,9 +11,9 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Frame Name="MainFrame" Source="MasterPage" Grid.Row="1"></Frame>
+        <Frame Name="MainFrame" Source="MasterPage" Grid.Row="1" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
         <Image Source="pictures\Мастер пол.png" Height="70" HorizontalAlignment="Left"></Image>
         <TextBlock Text="Мастер Пол" FontSize="45" HorizontalAlignment="Center"></TextBlock>
-        
+        <Button Content="Назад" Name="BtnBack" Width="100" Height="40" Margin="10" HorizontalAlignment="Right" Click="BtnBack_Click"/>
     </Grid>
 </Window>

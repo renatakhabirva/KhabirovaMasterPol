@@ -26,5 +26,21 @@ namespace KhabirovaMasterPol
             MainFrame.Navigate(new MasterPage());
             MasterClass.MainFrame = MainFrame;
         }
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MasterClass.MainFrame.GoBack();
+        }
+
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+            {
+                BtnBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnBack.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }
